@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: stack / ubuntu
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Stack
+        uses: haskell-actions/setup@v2
+        with:
+          enable-stack: true
+          stack-version: "3.7.1"
+
+      - name: Show tool versions
+        run: |
+          stack --version
+          stack ghc -- --version
+
+      - name: Build
+        run: stack build
+
+      - name: Test
+        run: stack test

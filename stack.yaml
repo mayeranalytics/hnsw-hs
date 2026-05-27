@@ -1,0 +1,13 @@
+resolver: lts-24.41
+compiler: ghc-9.10.3
+compiler-check: match-exact
+
+extra-deps: []
+
+flags: {}
+
+packages:
+  - .
+
+system-ghc: false
+install-ghc: true

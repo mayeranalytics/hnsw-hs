@@ -1,0 +1,74 @@
+name:                hnsw-hs
+version:             0.1.0.0
+synopsis:            Haskell FFI bindings to hnswlib for ANN search
+description: >
+  Haskell FFI bindings to hnswlib providing approximate nearest-neighbor
+  search for float vectors using Hierarchical Navigable Small World graphs.
+license:             BSD-3-Clause
+author:              hnsw-hs contributors
+maintainer:          mmayer@mayeranalytics.com
+homepage:            https://github.com/mayeranalytics/hnsw-hs
+bug-reports:         https://github.com/mayeranalytics/hnsw-hs/issues
+category:            Data
+
+github:             mayeranalytics/hnsw-hs
+
+extra-doc-files:
+  - CHANGELOG.md
+
+extra-source-files:
+  - README.md
+  - LICENSE
+  - src-include/hnswlib/hnswlib/*.h
+  - csrc/HNSW.h
+
+executables:
+  bench:
+    source-dirs:      bench
+    main:             Bench.hs
+    ghc-options:
+      - -Wall
+      - -O2
+    dependencies:
+      - base >= 4.18 && < 5
+      - hnsw-hs
+      - vector >= 0.13 && < 0.14
+      - criterion >= 1.6 && < 1.7
+      - directory >= 1.3 && < 1.4
+      - filepath >= 1.4 && < 1.6
+
+library:
+  source-dirs:        src
+  exposed-modules:
+    - Data.Vector.HNSW
+    - Data.Vector.HNSW.Internal.AtomicSave
+  other-modules:
+    - Data.Vector.HNSW.Internal.Types
+  include-dirs:
+    - csrc
+    - src-include/hnswlib
+  cxx-sources:
+    - csrc/HNSW.cc
+  cxx-options:
+    - -std=c++14
+  extra-libraries:
+    - stdc++
+  dependencies:
+    - base >= 4.18 && < 5
+    - vector >= 0.13 && < 0.14
+    - directory >= 1.3 && < 1.4
+    - filepath >= 1.4 && < 1.6
+    - containers >= 0.6 && < 0.8
+
+tests:
+  spec:
+    source-dirs:      test
+    main:             Spec.hs
+    ghc-options:
+      - -Wall
+    dependencies:
+      - base >= 4.18 && < 5
+      - hnsw-hs
+      - vector >= 0.13 && < 0.14
+      - directory >= 1.3 && < 1.4
+      - filepath >= 1.4 && < 1.6

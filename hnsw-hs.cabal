@@ -1,0 +1,95 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.38.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hnsw-hs
+version:        0.1.0.0
+synopsis:       Haskell FFI bindings to hnswlib for ANN search
+description:    Haskell FFI bindings to hnswlib providing approximate nearest-neighbor search for float vectors using Hierarchical Navigable Small World graphs.
+category:       Data
+homepage:       https://github.com/mayeranalytics/hnsw-hs
+bug-reports:    https://github.com/mayeranalytics/hnsw-hs/issues
+author:         hnsw-hs contributors
+maintainer:     mmayer@mayeranalytics.com
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    LICENSE
+    src-include/hnswlib/hnswlib/bruteforce.h
+    src-include/hnswlib/hnswlib/hnswalg.h
+    src-include/hnswlib/hnswlib/hnswlib.h
+    src-include/hnswlib/hnswlib/space_ip.h
+    src-include/hnswlib/hnswlib/space_l2.h
+    src-include/hnswlib/hnswlib/stop_condition.h
+    src-include/hnswlib/hnswlib/visited_list_pool.h
+    csrc/HNSW.h
+extra-doc-files:
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/mayeranalytics/hnsw-hs
+
+library
+  exposed-modules:
+      Data.Vector.HNSW
+      Data.Vector.HNSW.Internal.AtomicSave
+  other-modules:
+      Data.Vector.HNSW.Internal.Types
+  hs-source-dirs:
+      src
+  cxx-options: -std=c++14
+  include-dirs:
+      csrc
+      src-include/hnswlib
+  cxx-sources:
+      csrc/HNSW.cc
+  extra-libraries:
+      stdc++
+  build-depends:
+      base >=4.18 && <5
+    , containers >=0.6 && <0.8
+    , directory ==1.3.*
+    , filepath >=1.4 && <1.6
+    , vector ==0.13.*
+  default-language: Haskell2010
+
+executable bench
+  main-is: Bench.hs
+  other-modules:
+      Paths_hnsw_hs
+  autogen-modules:
+      Paths_hnsw_hs
+  hs-source-dirs:
+      bench
+  ghc-options: -Wall -O2
+  build-depends:
+      base >=4.18 && <5
+    , criterion ==1.6.*
+    , directory ==1.3.*
+    , filepath >=1.4 && <1.6
+    , hnsw-hs
+    , vector ==0.13.*
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hnsw_hs
+  autogen-modules:
+      Paths_hnsw_hs
+  hs-source-dirs:
+      test
+  ghc-options: -Wall
+  build-depends:
+      base >=4.18 && <5
+    , directory ==1.3.*
+    , filepath >=1.4 && <1.6
+    , hnsw-hs
+    , vector ==0.13.*
+  default-language: Haskell2010

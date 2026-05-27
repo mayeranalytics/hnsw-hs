@@ -1,0 +1,103 @@
+hnsw-hs public export manifest
+source_head=9e18783717d4eed67e2e537009ed43e9e8a3c5e5
+export_timestamp_utc=2026-05-27T05:23:30Z
+
+allowlist:
+  csrc/
+  src/
+  test/
+  bench/
+  src-include/hnswlib/
+  .github/workflows/ci.yaml
+  package.yaml
+  hnsw-hs.cabal
+  stack.yaml
+  stack.yaml.lock
+  LICENSE
+  CHANGELOG.md
+
+generated:
+  README.md (sourced from scripts/templates/README.public.md)
+  PUBLIC_EXPORT_MANIFEST.txt
+
+files_exported:
+.github/workflows/ci.yaml
+CHANGELOG.md
+LICENSE
+PUBLIC_EXPORT_MANIFEST.txt
+README.md
+bench/Bench.hs
+csrc/HNSW.cc
+csrc/HNSW.h
+hnsw-hs.cabal
+package.yaml
+src-include/hnswlib/ALGO_PARAMS.md
+src-include/hnswlib/CMakeLists.txt
+src-include/hnswlib/LICENSE
+src-include/hnswlib/MANIFEST.in
+src-include/hnswlib/Makefile
+src-include/hnswlib/README.md
+src-include/hnswlib/TESTING_RECALL.md
+src-include/hnswlib/examples/cpp/EXAMPLES.md
+src-include/hnswlib/examples/cpp/example_epsilon_search.cpp
+src-include/hnswlib/examples/cpp/example_filter.cpp
+src-include/hnswlib/examples/cpp/example_mt_filter.cpp
+src-include/hnswlib/examples/cpp/example_mt_replace_deleted.cpp
+src-include/hnswlib/examples/cpp/example_mt_search.cpp
+src-include/hnswlib/examples/cpp/example_multivector_search.cpp
+src-include/hnswlib/examples/cpp/example_replace_deleted.cpp
+src-include/hnswlib/examples/cpp/example_search.cpp
+src-include/hnswlib/examples/python/EXAMPLES.md
+src-include/hnswlib/examples/python/example.py
+src-include/hnswlib/examples/python/example_filter.py
+src-include/hnswlib/examples/python/example_replace_deleted.py
+src-include/hnswlib/examples/python/example_search.py
+src-include/hnswlib/examples/python/example_serialization.py
+src-include/hnswlib/examples/python/pyw_hnswlib.py
+src-include/hnswlib/hnswlib/bruteforce.h
+src-include/hnswlib/hnswlib/hnswalg.h
+src-include/hnswlib/hnswlib/hnswlib.h
+src-include/hnswlib/hnswlib/space_ip.h
+src-include/hnswlib/hnswlib/space_l2.h
+src-include/hnswlib/hnswlib/stop_condition.h
+src-include/hnswlib/hnswlib/visited_list_pool.h
+src-include/hnswlib/pyproject.toml
+src-include/hnswlib/python_bindings/LazyIndex.py
+src-include/hnswlib/python_bindings/__init__.py
+src-include/hnswlib/python_bindings/bindings.cpp
+src-include/hnswlib/python_bindings/tests/bindings_test_bf_index.py
+src-include/hnswlib/setup.py
+src-include/hnswlib/tests/cpp/download_bigann.py
+src-include/hnswlib/tests/cpp/epsilon_search_test.cpp
+src-include/hnswlib/tests/cpp/main.cpp
+src-include/hnswlib/tests/cpp/multiThreadLoad_test.cpp
+src-include/hnswlib/tests/cpp/multiThread_replace_test.cpp
+src-include/hnswlib/tests/cpp/multivector_search_test.cpp
+src-include/hnswlib/tests/cpp/searchKnnCloserFirst_test.cpp
+src-include/hnswlib/tests/cpp/searchKnnWithFilter_test.cpp
+src-include/hnswlib/tests/cpp/sift_1b.cpp
+src-include/hnswlib/tests/cpp/sift_test.cpp
+src-include/hnswlib/tests/cpp/update_gen_data.py
+src-include/hnswlib/tests/cpp/updates_test.cpp
+src-include/hnswlib/tests/python/bindings_test.py
+src-include/hnswlib/tests/python/bindings_test_filter.py
+src-include/hnswlib/tests/python/bindings_test_getdata.py
+src-include/hnswlib/tests/python/bindings_test_labels.py
+src-include/hnswlib/tests/python/bindings_test_metadata.py
+src-include/hnswlib/tests/python/bindings_test_pickle.py
+src-include/hnswlib/tests/python/bindings_test_recall.py
+src-include/hnswlib/tests/python/bindings_test_replace.py
+src-include/hnswlib/tests/python/bindings_test_resize.py
+src-include/hnswlib/tests/python/bindings_test_spaces.py
+src-include/hnswlib/tests/python/bindings_test_stress_mt_replace.py
+src-include/hnswlib/tests/python/draw_git_test_plots.py
+src-include/hnswlib/tests/python/git_tester.py
+src-include/hnswlib/tests/python/speedtest.py
+src/Data/Vector/HNSW.hs
+src/Data/Vector/HNSW/Internal/AtomicSave.hs
+src/Data/Vector/HNSW/Internal/Types.hs
+stack.yaml
+stack.yaml.lock
+test/Spec.hs
+
+validation=pass
